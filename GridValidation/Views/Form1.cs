@@ -16,5 +16,12 @@ namespace GridValidation
         {
             InitializeComponent();
         }
+
+        private void personDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Ungültige Eingabe");
+            personDataGridView[e.ColumnIndex, e.RowIndex].Value = "";
+            e.Cancel = true;
+        }
     }
 }
