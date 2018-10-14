@@ -12,5 +12,6 @@ namespace GridValidation.Models
         public int? Age { get; set; }
         public DateTime Birthday { get; set; }
         public bool? IsMarried { get; set; }
+        public double? Height { get; set; }
     }
 }

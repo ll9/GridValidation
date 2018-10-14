@@ -12,6 +12,7 @@ namespace GridValidation
 {
     public partial class Form1 : Form
     {
+        private ErrorProvider _errorProvider = new ErrorProvider();
         public Form1()
         {
             InitializeComponent();
@@ -19,9 +20,21 @@ namespace GridValidation
 
         private void personDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            MessageBox.Show("Ungültige Eingabe");
+            Control edit = personDataGridView.EditingControl;
+            _errorProvider.SetError(edit, "Invalid Value");
+            _errorProvider.SetIconAlignment(edit, ErrorIconAlignment.MiddleRight);
+            _errorProvider.SetIconPadding(edit, -20); // icon displays on left side of cell
+
             personDataGridView[e.ColumnIndex, e.RowIndex].Value = "";
-            e.Cancel = true;
+
+
+
+
+        }
+
+        private void personDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            _errorProvider.Clear();
         }
     }
 }

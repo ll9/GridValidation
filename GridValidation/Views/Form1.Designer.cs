@@ -35,6 +35,7 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Height = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.personDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -47,12 +48,14 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
-            this.dataGridViewCheckBoxColumn1});
+            this.dataGridViewCheckBoxColumn1,
+            this.Height});
             this.personDataGridView.DataSource = this.personBindingSource;
             this.personDataGridView.Location = new System.Drawing.Point(54, 31);
             this.personDataGridView.Name = "personDataGridView";
-            this.personDataGridView.Size = new System.Drawing.Size(445, 127);
+            this.personDataGridView.Size = new System.Drawing.Size(624, 127);
             this.personDataGridView.TabIndex = 1;
+            this.personDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.personDataGridView_CellEndEdit);
             this.personDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.personDataGridView_DataError);
             // 
             // dataGridViewTextBoxColumn1
@@ -83,6 +86,12 @@
             // 
             this.personBindingSource.DataSource = typeof(GridValidation.Models.Person);
             // 
+            // Height
+            // 
+            this.Height.DataPropertyName = "Height";
+            this.Height.HeaderText = "Height";
+            this.Height.Name = "Height";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -105,6 +114,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Height;
     }
 }
 
